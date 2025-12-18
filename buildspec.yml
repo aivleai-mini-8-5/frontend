@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+artifacts:
+  files:
+    - 'dist/**/*'           # 빌드된 정적 파일
+    - 'appspec.yml'         # 배포 정의서
+    - 'deploy-scripts/**/*' # 배포 스크립트
